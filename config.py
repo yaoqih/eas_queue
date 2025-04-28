@@ -2,7 +2,7 @@
 
 # Redis configuration for Celery Broker and Result Backend
 # Example: 'redis://localhost:6379/0'
-REDIS_URL = 'redis://localhost:6379/0'
+REDIS_URL = 'redis://:Order123@localhost:6380/1'
 
 # Base URL of the target non-queue API service
 # Example: 'http://your-target-api.com'
