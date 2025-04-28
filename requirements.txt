@@ -1,0 +1,5 @@
+Flask>=2.0
+Celery>=5.0
+redis>=4.0
+requests>=2.20
+
