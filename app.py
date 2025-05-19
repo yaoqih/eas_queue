@@ -186,7 +186,13 @@ def get_task_status(service_name):
     GET /api/predict/my_service/sink?request_id=xxx-xxx-xxx
     GET /api/predict/my_service/sink?_index_=123
     """
-    query_request_id = request.args.get('request_id')
+    if request.args.get('requestId'):
+        query_request_id=request.args.get('requestId')
+    elif request.args.get('request_id'):
+        query_request_id = request.args.get('request_id')
+    else:
+        return jsonify({"error": "Either 'requestId' or 'request_id' query parameter is required"}), 400
+
     query_index = request.args.get('_index_')
     request_id_to_query = None
     query_identifier_log = ""
